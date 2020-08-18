@@ -1,0 +1,61 @@
+---
+title: A Nav that just works
+subtitle: Step 2
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-2
+prevPath: nav/step-1
+showDiffOnLoad: false
+splitView: true
+---
+
+import {Code as Step2Code} from '@code/nav/step-2';
+
+<RenderCode Code={Step2Code} />
+
+# Now add the hook
+
+## Import
+
+First we import the use size hook
+
+<CodeSnippet code={`import useSize from '@hzdg/use-size';`} />
+
+## Initialize
+
+then we initialize the hook to expose the width and ref
+
+<CodeSnippet code={`const [{width}, ref] = useSize();`} />
+
+(Note: width is only one attribute exposed by useSize())
+
+<Link to={'/blog/use-size/'}>Click here for more info</Link>
+
+<br />
+<br />
+
+## Attach ref
+
+lastly we attach the ref to the element we want to get the size of
+
+<CodeSnippet
+  code={`
+<Flex
+  ref={ref}
+  sx={{
+  flex: '0 1 800px',
+  justifyContent: 'space-between',
+  border: (theme: Theme) => \`3px solid \${theme?.colors?.green}\`,
+  }}
+>`}
+/>
+
+(Note we wrapped the entire component in a Box so we can output our state
+in the result)
+Below the nav list in the Result tab, you will now see the text "width: [current width in pixels]"

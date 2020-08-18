@@ -1,0 +1,34 @@
+---
+title: A Nav that just works
+subtitle: Step 13
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-13
+prevPath: nav/step-12
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as Step13Code} from '@code/nav/step-13';
+
+<RenderCode Code={Step13Code} />
+
+# That dropdown really isn't dropping down
+
+To fix this, when isDropdown, we should position absolute and set top to
+100% so the top lines up with the bottom of its parent element
+
+<CodeSnippet
+  code={`
+const dropdownStyles = {
+  flexDirection: 'column',
+  position: 'absolute',
+  top: '100%',
+};`}
+/>

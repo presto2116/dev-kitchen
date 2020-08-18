@@ -1,0 +1,45 @@
+---
+title: A Nav that just works
+subtitle: Step 7
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-7
+prevPath: nav/step-6
+showDiffOnLoad: true
+splitView: true
+---
+
+import {Code as Step7Code} from '@code/nav/step-7';
+
+<RenderCode Code={Step7Code} />
+
+# Now wrap it in a parent div
+
+We have our minimum width available and isDropdown calculations working.
+To use those calculations, we must first wrap our nav list in another
+flex element and calculate its width as well. I know this sounds strange.
+Why do we need to calc two elements widths? We must do this because once
+we render the nav list as a dropdown, its width will more than likely always
+be less than the minimum width available and will never be able to know when
+it can become a row of links again.
+
+Since we now have childWidth and parentWidth, we need to refactor our
+minimum width available and isDropdown calculations.
+
+We will use child width to get our minimum width available calculation.
+
+And the parent width to decide when our nav list should be rendered as
+a dropdown.
+
+Our new parent element will have a red border and very basic styling. "flex: 1 1 auto"
+
+I also updated the width text to include both child and parent widths
+
+(Note: the difference in widths in our display text when both are aligned
+is because we have a 3px border on both)

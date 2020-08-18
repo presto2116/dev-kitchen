@@ -1,0 +1,96 @@
+---
+title: A Nav that just works
+subtitle: Step 3
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-3
+prevPath: nav/step-2
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as Step3Code} from '@code/nav/step-3';
+
+<RenderCode Code={Step3Code} />
+
+# Use the Hook
+
+## Lets use that hook to get some important calculations
+
+In the rendered result you will see "minWidthAvailable: [number in pixels]". There may be better ways to get this calculation, but this was the route I went.
+
+<br />
+
+## Min width available state
+
+First thing we need to do is create a new useState hook to get and set the minimum width available.
+
+<CodeSnippet
+  code={`const [minWidthAvailable, setMinWidthAvailable] = useState<number>(0);`}
+/>
+
+## Pre rendered styles
+
+Next we have to render the list at its smallest possible width
+to calculate the minimum width available. The way I achieved
+this was by first setting position absolute and visibility hidden
+so it wont be contained by a parent element and wont be visible to users.
+
+I also set the element I am measuring and all its child elements to flex: '0 0 auto'.
+
+My assumption here is setting both to its smallest possible size and
+knowing that the link text can't wrap, this should provide the smallest
+possible width this element can take before the links overflow
+
+<CodeSnippet
+  code={`
+const preRenderedStyles = {
+  flex: '0 0 auto',
+  position: 'absolute',
+  visibility: 'hidden',
+  '> *': {
+    flex: '0 0 auto',
+  },
+};
+`}
+/>
+
+## useLayoutEffect
+
+Last step here is actually calculating that number.
+To do this I used useLayoutEffect to calculate the size
+before actually rendering it to the user.
+
+I know that useSize() initializes all its measurements with 0
+and I initialized minWidthAvailable with the number 0.
+So once width is greater than 0, I set the min width available
+to that number Since min width available is no longer 0,
+this effect will never run again
+
+<CodeSnippet
+  code={`
+useLayoutEffect(() => {
+  if (width > 0 && minWidthAvailable === 0) {
+    setMinWidthAvailable(width);
+  }
+}, [width, minWidthAvailable]);
+`}
+/>
+
+## Conditionally render element
+
+We now need to remove the pre-rendered styles and instead use our original
+styles
+
+Using the same logic as above. If min width available is greater than 0, we
+have our calculation and we can render our actual styles
+
+<CodeSnippet
+  code={`sx={minWidthAvailable === 0 ? preRenderedStyles : renderedStyles}`}
+/>

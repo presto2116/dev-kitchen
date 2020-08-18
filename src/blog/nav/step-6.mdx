@@ -1,0 +1,38 @@
+---
+title: A Nav that just works
+subtitle: Step 6
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-6
+prevPath: nav/step-5
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as Step6Code} from '@code/nav/step-6';
+
+<RenderCode Code={Step6Code} />
+
+# isDropdown
+
+Now that we used useMemo already once, lets use it for something more
+useful. Lets create another memoized variable to check for if we should display the list as a
+dropdown or not. We have said before if the width of our list is less than the min width
+available, we should display our nav in another state
+
+<CodeSnippet
+  code={`
+const isDropdown = useMemo<boolean>(() => width < minWidthAvailable, [
+width,
+minWidthAvailable,
+]);`}
+/>
+
+(Note: we also removed the isRendered display text as it was pretty
+useless, and now are displaying isDropdown)

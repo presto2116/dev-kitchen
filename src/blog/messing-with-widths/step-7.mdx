@@ -1,0 +1,32 @@
+---
+title: Messing with Widths
+subtitle: Step 7
+description: Using HZ-core IRL
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-26'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'flexbox']
+path: messing-with-widths/step-7
+prevPath: messing-with-widths/step-6
+showDiffOnLoad: true
+splitView: true
+---
+
+import {Code as MwWStep7Code} from '@code/messing-with-widths/step-7';
+
+<RenderCode Code={MwWStep7Code} />
+
+# useSize hook
+
+Switch to use useSize
+
+<DiffSnippet
+  codeSnippet={`import useSize from '@hzdg/use-size';`}
+  prevCodeSnippet={`import {useWindowSize} from '@hzdg/windowsize-monitor';`}
+  showDiffOnLoad={true}
+/>
+
+Now instead of using the window size, we are using the container size

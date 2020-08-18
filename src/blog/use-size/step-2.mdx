@@ -1,0 +1,36 @@
+---
+title: Basic Use Size Example
+subtitle: Step 2
+description: Let's see the power of @hzdg/use-size
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-21'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size']
+path: use-size/step-2
+prevPath: use-size/step-1
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as UsStep2Code} from '@code/use-size/step-2';
+
+<RenderCode Code={UsStep2Code} />
+
+# Adding the hook
+
+Now its time to add the hook. We must first import it.
+
+<CodeSnippet code={`import useSize from '@hzdg/use-size';`} />
+
+Then initialize it.
+
+<CodeSnippet code={`const [, sizeRef] = useSize();`} />
+
+and add the a ref to the element you want to know the size of
+
+<CodeSnippet code={`<Box ref={sizeRef}>`} />
+
+(Note: visually you will not see any changes in the rendered result)

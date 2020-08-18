@@ -1,0 +1,47 @@
+---
+title: Messing with Widths
+subtitle: Step 6
+description: Using HZ-core IRL
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-26'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'flexbox']
+path: messing-with-widths/step-6
+prevPath: messing-with-widths/step-5
+showDiffOnLoad: true
+splitView: true
+---
+
+import {jsx, Grid} from 'theme-ui';
+import {Code as MwWStep6Code} from '@code/messing-with-widths/step-6';
+
+<RenderCode Code={MwWStep6Code} />
+
+# Ut Oh
+
+Who wrapped a flexed sidebar around my beautiful component
+
+My code is ruined!!!!!!!!!!!
+
+<Grid
+  sx={{
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    img: {maxWidth: '100%', py: 3},
+  }}
+>
+  <img
+    src="https://media.giphy.com/media/LKTTAzGboJGzC/source.gif"
+    alt="i cant"
+  />
+  <img
+    src="https://media.giphy.com/media/gd09Y2Ptu7gsiPVUrv/giphy.gif"
+    alt="why"
+  />
+  <img
+    src="https://media.giphy.com/media/9Dk3weuP9d8VzBKs3I/giphy.gif"
+    alt="i cant"
+  />
+</Grid>

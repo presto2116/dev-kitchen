@@ -1,0 +1,46 @@
+---
+title: A Nav that just works
+subtitle: Step 5
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-5
+prevPath: nav/step-4
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as Step5Code} from '@code/nav/step-5';
+
+<RenderCode Code={Step5Code} />
+
+# useMemo
+
+When conditionally rendering styles or components, I never like seeing
+something something >= something. To add to code readability, sometimes
+slapping that logic into a useMemohelps clean up the code and make it
+easier to read.
+
+In our previous step we stated: "If min width available is greater than 0,
+we have our calculation and we can render our actual styles"
+
+Instead of adding minWidthAvailable === 0 or minWidthAvailable > 0 or
+minWidthAvailable !== 0
+
+Why not create a new memoized value that gives us the same result in a
+more readable way
+
+<CodeSnippet
+  code={`
+const isRendered = useMemo<boolean>(() => minWidthAvailable > 0, 
+  [minWidthAvailable]
+);`}
+/>
+
+(Note: you will likely always see isRendered: true in our State Dialog as it is a very quick
+calculation)

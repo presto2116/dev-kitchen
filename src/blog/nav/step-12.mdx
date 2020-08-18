@@ -1,0 +1,30 @@
+---
+title: A Nav that just works
+subtitle: Step 12
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-12
+prevPath: nav/step-11
+showDiffOnLoad: true
+splitView: true
+---
+
+import {Code as Step12Code} from '@code/nav/step-12';
+
+<RenderCode Code={Step12Code} />
+
+# Let's make a website
+
+I have a component that wraps our nav in it's very own website.
+
+<CodeSnippet
+  code={`import {WebsiteWrapper} from '@code/nav/website-wrapper';`}
+/>
+
+I also removed the borders to make it look official.

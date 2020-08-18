@@ -1,0 +1,39 @@
+---
+title: A Nav that just works
+subtitle: Step 9
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-9
+prevPath: nav/step-8
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as Step9Code} from '@code/nav/step-9';
+
+<RenderCode Code={Step9Code} />
+
+# Move it to the other side
+
+Our nav will be on the right side of the page with a logo on the left side
+so we need to flip our flex layout to match.
+
+<CodeSnippet
+  code={`
+<Flex
+  ref={parentRef}
+  sx={{
+    flex: '1 1 auto',
+    justifyContent: 'flex-end',
+    border: (theme: Theme) => \`3px solid \${theme?.colors?.red}\`,
+  }}
+>`}
+/>
+
+(Note: I removed the State dialog below as it is no longer necessary)

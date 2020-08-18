@@ -1,0 +1,44 @@
+---
+title: A Nav that just works
+subtitle: Step 8
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-8
+prevPath: nav/step-7
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as Step8Code} from '@code/nav/step-8';
+
+<RenderCode Code={Step8Code} />
+
+# Adding dropdown styles to our list
+
+Let's add some conditional styling. We renamed
+renderedStyles to rowStyles and added new dropdownStyles
+
+<CodeSnippet
+  code={`
+const rowStyles = {
+  flex: '0 1 800px',
+  justifyContent: 'space-between',
+  border: (theme: Theme) => \`3px solid \${theme?.colors?.green}\`,
+};
+const dropdownStyles = {
+  flexDirection: 'column',
+  border: (theme: Theme) => \`3px solid \${theme?.colors?.green}\`,
+};`}
+/>
+
+Now you can see when isDropdown is true, our list will use dropdown styles
+
+<CodeSnippet
+  code={`const renderedStyles = isDropdown ? dropdownStyles : rowStyles;`}
+/>

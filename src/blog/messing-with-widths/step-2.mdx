@@ -1,0 +1,32 @@
+---
+title: Messing with Widths
+subtitle: Step 2
+description: Using HZ-core IRL
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-26'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'flexbox']
+path: messing-with-widths/step-2
+prevPath: messing-with-widths/step-1
+showDiffOnLoad: true
+splitView: true
+---
+
+import {Code as MwWStep2Code} from '@code/messing-with-widths/step-2';
+
+<RenderCode Code={MwWStep2Code} />
+
+# useWindowSize hook
+
+Switch to use useWindowSize
+
+<CodeSnippet code={`import {useWindowSize} from '@hzdg/windowsize-monitor';`} />
+
+Thought it would be a good time to bring in an @hzdg hook.
+
+We are literally recreating the previous css code to use a react hook
+
+No functional changes and everything should work just the same to the users

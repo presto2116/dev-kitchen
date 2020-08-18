@@ -1,0 +1,40 @@
+---
+title: A Nav that just works
+subtitle: Step 10
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-10
+prevPath: nav/step-9
+showDiffOnLoad: true
+splitView: false
+---
+
+import {Code as Step10Code} from '@code/nav/step-10';
+
+<RenderCode Code={Step10Code} />
+
+# Change up the link styling
+
+Instead of spacing our links out, lets default it to fill the space available.
+
+<CodeSnippet
+  code={`
+<Link
+  sx={{
+    flex: '1 1 auto',
+    ml: 3,
+  }}
+/>`}
+/>
+
+flex: '1 1 auto' fills available space and ml: 3 adds some
+margin left so they are not completely touching.
+
+This setup allows each link to be larger if space is available
+providing a better look and usability.

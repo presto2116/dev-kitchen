@@ -1,0 +1,81 @@
+---
+title: A Nav that just works
+subtitle: Step 1
+description: A nav that isnt based on media queries
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-19'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size', 'Nav', 'flexbox']
+path: nav/step-1
+prevPath: nav/step-1
+showDiffOnLoad: false
+splitView: true
+---
+
+import {Code as Step1Code} from '@code/nav/step-1';
+
+<RenderCode Code={Step1Code} />
+
+# Let's start with a basic list
+
+## Breakdown
+
+We will be rendering a list of 4 nav links
+
+Below is a generic breakdown of what the list will look like
+
+(Click Code Snippet to see the actual code file)
+
+<CodeSnippet
+  code={`
+<Flex>
+  {links.map(link => (
+    <Link />
+  ))}
+</Flex>`}
+/>
+
+## Flex Element Styles
+
+<CodeSnippet
+  code={`
+<Flex
+  sx={{
+    flex: '1 1 auto',
+    justifyContent: 'space-between',
+    border: (theme: Theme) => \`3px solid \${theme?.colors?.green}\`,
+  }}
+>`}
+/>
+
+`flex: 1 1 auto;`
+stretches the flex div to fill space
+
+`justifyContent: space-between;`
+spaces the items evenly and border adds a visual border so you can see what we are doing
+
+## Link Styles
+
+`variant={'nav'}` has some base styling hidden inside the theme some useful attributes to know for this post are
+
+<CodeSnippet
+  code={`
+nav: {
+  flex: '0 0 auto',
+  whiteSpace: 'nowrap',
+  fontSize: 3,
+  p: 2,
+  textAlign: 'center',
+  textDecoration: 'none',
+  bg: 'grey',
+  color: 'white',
+  transition: 'background 0.3s ease-in-out',
+  '&.active, &.active:hover': {bg: 'boulder'},
+  '&:hover': {bg: 'boulder'},
+},`}
+/>
+
+Most important is whiteSpace: 'nowrap' this means our link labels, nomatter the length, will never wrap to a second line

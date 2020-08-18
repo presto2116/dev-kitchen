@@ -1,0 +1,46 @@
+---
+title: Basic Use Size Example
+subtitle: Step 3
+description: Let's see the power of @hzdg/use-size
+author: Preston Straight
+authorGithub: https://github.com/presto2116
+written: '2020-07-21'
+template: step-template
+hzCoreComponent: '@hzdg/use-size'
+hzCoreLink: https://hz-core.netlify.app/use-size
+keywords: ['@hzdg/use-size']
+path: use-size/step-3
+prevPath: use-size/step-2
+showDiffOnLoad: true
+splitView: true
+---
+
+import {Code as UsStep3Code} from '@code/use-size/step-3';
+
+<RenderCode Code={UsStep3Code} />
+
+# Now lets use the hook
+
+We have now exposed the size object.
+
+<CodeSnippet code={`const [size, sizeRef] = useSize();`} />
+
+And for this example we will render the size of the Box
+in a `<pre>` element below.
+
+<CodeSnippet
+  code={`
+<pre>
+  {JSON.stringify(size, null, 2)}
+</pre>
+`}
+/>
+
+Make sure to resize the view port to see the numbers change
+
+Note the difference between height and borderBoxSize.blockSize
+and between width and borderBoxSize.inlineSize.
+
+If you want to play with the final code from this post, head on over to
+
+<Link to={'/recipes/use-size/'}>the use-size recipe</Link>
