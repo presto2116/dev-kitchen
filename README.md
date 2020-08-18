@@ -7,6 +7,8 @@ There are two types of posts you can make here
 * A recipe
 * An interactive kitchen
 
+## Recipes
+
 For recipe posts I have set up a way to render an example in as many steps as needed to explain your thought process. I am treating them as training exercises that can be be documented and help granularly explain an idea that you have been working on.
 
 It has been arranged to build your code into steps that you can expand on from 1 - n. 
@@ -24,7 +26,7 @@ Lets first talk about the copy tab.
 
 You will be writing mdx like you normally do. There is a provided frontmatter type. 
 
-## Frontmatter breakdown
+### Frontmatter breakdown
 
 * title: Title of recipe post
 * subtitle: Subtitle of recipe post
@@ -43,23 +45,48 @@ You will be writing mdx like you normally do. There is a provided frontmatter ty
 
 The mdx files also have some special components that are available, no need to import
 
+### RenderCode
+
 `<RenderCode Code={your code to render}/>`
+
 This is required to create the Result tab with your rendered code.
+
+<br/>
+
+### CodeSnippet
 
 `<CodeSnippet code={stringified code snippet}>`
 
- This will render a nice styled code snippet. (Note: white space is rendered as well. so make sure to write multi line code strings with no tabs, unless you want them rendered.)
+ This will render a nice styled code snippet in the Copy tab. 
+ 
+ (Note: white space is rendered as well. so make sure to write multi line code strings with no tabs, unless you want them rendered.)
 
+<br/>
+
+### DiffSnippet
 
 `<DiffSnippet 
-  codeSnippet={new stringified code }
-  prevCodeSnippet={old stringified code }
+  codeSnippet={new stringified code}
+  prevCodeSnippet={old stringified code}
 />`
 
-This will render a diff of two code snippets. Same as CodeSnippet, white space matters
+This will render a diff of two code snippets in the copy tab. Same as CodeSnippet, white space matters
+
+<br/>
+
+### Link
+
 
 `<Link to={internal url}>{children}</Link> `
+
 A gatsby link to another url.
+
+<br/>
+
+
+### Most basic recipe post
+
+Look at these two directories to see the most basic example of a recipe.
 
 /src/code/use-size
 
@@ -67,4 +94,44 @@ and
 
 /src/recipes/use-size 
 
-are probably the most basic examples on how to write these step by step. Note there is no need to write the Code in any special way. just write it, and import into recipe step post and render it in `<RenderCode Code={here}>` 
+Note there is no need to write the Code in any special way. just write it, and import into recipe step post and render it in `<RenderCode Code={here}>` 
+
+## Kitchen Playground
+
+In the kitchen, you are able to render your code with an a code editor and preview tabs. 
+
+Kitchen examples are found in /src/pages/kitchen. (might want to move out of pages at some point.)
+
+There are some caveats to this.
+* No typescript support so you will need to rip out all type annotations.
+* Code snippet must be stringified.
+
+Structure of file
+* All imports at top of file
+* import KitchenTemplate from '@templates/kitchen-template';
+* Inside main function:
+  * frontmatter object
+  * scope = object of all packages needed to render the snippet. This will be passed to react-live
+  * snippet = stringified code 
+    * In snippet, below function you must also include render statement
+``` 
+            const snippet =`
+              const Code = () => {
+
+              };
+              ...
+              ...
+              // Below is code to render in react-live view
+              render(
+                <Code />
+              )`
+```
+
+Then pass these three items into the KitchenTemplate
+```
+<KitchenTemplate
+  codeSnippet={snippet}
+  scope={scope}
+  frontmatter={frontmatter}
+/>
+```
