@@ -13,9 +13,9 @@ For recipe posts I have set up a way to render an example in as many steps as ne
 
 It has been arranged to build your code into steps that you can expand on from 1 - n. 
 
-To start open a new directory in src/code. ie. src/code/new-example. step-1.tsx should be the start of your code. I have gone the route of copying and adding additional code until finished. start small at step-1.tsx and expand from there. or write the entire example and work backwards to step-1.
+To start open a new directory in [/src/code](/src/code). ie. src/code/new-example. step-1.tsx should be the start of your code. I have gone the route of copying and adding additional code until finished. start small at step-1.tsx and expand from there. or write the entire example and work backwards to step-1.
 
-In parallel, in src/recipes you should create the same directory from /code. ie. src/recipes/new-example. in this directory you will be creating mdx files. index.mdx will be your intro or preface to the post and step-1.mdx - step-n.mdx will help document the code from /code. 
+In parallel, in [/src/recipes](/src/recipes) you should create the same directory from /code. ie. src/recipes/new-example. in this directory you will be creating mdx files. index.mdx will be your intro or preface to the post and step-1.mdx - step-n.mdx will help document the code from /code. 
 
 If you open up a recipe post in a browser you will see three tabs. Copy, Code, and Result. 
 * Copy = mdx file documentation. 
@@ -88,11 +88,11 @@ A gatsby link to another url.
 
 Look at these two directories to see the most basic example of a recipe.
 
-/src/code/use-size
+[/src/code/use-size](/src/code/use-size)
 
 and 
 
-/src/recipes/use-size 
+[/src/recipes/use-size](/src/recipes/use-size)
 
 Note there is no need to write the Code in any special way. just write it, and import into recipe step post and render it in `<RenderCode Code={here}>` 
 
@@ -100,7 +100,8 @@ Note there is no need to write the Code in any special way. just write it, and i
 
 In the kitchen, you are able to render your code with an a code editor and preview tabs. 
 
-Kitchen examples are found in /src/pages/kitchen. (might want to move out of pages at some point.)
+Kitchen examples are found in [/src/pages/kitchen.](/src/pages/kitchen)
+(might want to move out of pages at some point.)
 
 There are some caveats to this.
 * No typescript support so you will need to rip out all type annotations.
