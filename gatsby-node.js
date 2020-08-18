@@ -70,7 +70,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
       : null;
     const slug = node.slug.endsWith('/') ? node.slug : `${node.slug}/`;
     createPage({
-      path: `/blog/${slug}`,
+      path: `/recipes/${slug}`,
       component:
         node.frontmatter.template === 'step-template'
           ? stepTemplate

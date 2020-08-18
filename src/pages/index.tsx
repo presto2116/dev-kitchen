@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import {jsx, Container, Heading, Text} from 'theme-ui';
 import {Link} from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '@components/Layout';
-import Image from '@components/Image';
 import Meta from '@components/Meta';
+
+import ImgSrc from '../images/dev-kitchen.jpg';
 
 const IndexPage = (): JSX.Element => (
   <Layout>
@@ -15,22 +17,20 @@ const IndexPage = (): JSX.Element => (
     />
     <Container variant="narrow">
       <Heading variant={'page'}>Hi people</Heading>
-      <Text>Welcome to your new @hzdg recipe blog.</Text>
-      <div style={{maxWidth: `300px`, marginBottom: `1.45rem`}}>
-        <Image />
-      </div>
+      <Text>Welcome to your new @hzdg kitchen.</Text>
       <ul sx={{variant: 'styles.ul'}}>
         <li>
-          <Link to="/blog/" sx={{variant: 'links.recipe'}}>
-            Go to blog
-          </Link>
-        </li>
-        <li>
-          <Link to="/recipes/" sx={{variant: 'links.recipe'}}>
+          <Link to="/recipes/" sx={{variant: 'links.base'}}>
             Go to recipes
           </Link>
         </li>
+        <li>
+          <Link to="/kitchen/" sx={{variant: 'links.base'}}>
+            Go to the kitchen
+          </Link>
+        </li>
       </ul>
+      <img src={ImgSrc} alt="dev kitchen" sx={{maxWidth: 350, my: 3}} />
     </Container>
   </Layout>
 );

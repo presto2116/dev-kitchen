@@ -3,21 +3,21 @@ import {jsx, Box, Heading, Text} from 'theme-ui';
 import {Fragment} from 'react';
 import useSize from '@hzdg/use-size';
 
-import RecipeTemplate from '@templates/recipe-template';
+import KitchenTemplate from '@templates/kitchen-template';
 
 const UseSizePage = (): JSX.Element => {
   const frontmatter = {
-    title: 'Basic useSize Recipe',
-    subtitle: 'Recipe',
+    title: 'Basic useSize Kitchen',
+    subtitle: 'Kitchen',
     description: `Intro to @hzdg/use-size`,
     author: 'Preston Straight',
     authorGithub: 'https://github.com/presto2116',
     written: '2020-07-21',
-    template: 'step-template',
+    template: 'kitchen-template',
     hzCoreComponent: '@hzdg/use-size',
     hzCoreLink: 'https://hz-core.netlify.app/use-size',
     keywords: ['@hzdg/use-size'],
-    blogPostUrl: '/blog/use-size/',
+    recipePostUrl: '/recipes/use-size/',
   };
 
   const scope = {
@@ -50,7 +50,7 @@ const UseSizePage = (): JSX.Element => {
   )`;
 
   return (
-    <RecipeTemplate
+    <KitchenTemplate
       codeSnippet={Snippet}
       scope={scope}
       frontmatter={frontmatter}

@@ -1,10 +1,10 @@
 {
-  "name": "hz-dev-blog",
+  "name": "hz-dev-kitchen",
   "version": "0.0.0",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hzdg/hz-dev-blog.git"
+    "url": "git+https://github.com/hzdg/hz-dev-kitchen.git"
   },
   "author": "HZDG",
   "license": "UNLICENSED",

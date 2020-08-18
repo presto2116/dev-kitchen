@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {jsx, Flex, Heading, Box, MenuButton, Text, Link} from 'theme-ui';
 
-import RecipeTemplate from '@templates/recipe-template';
+import KitchenTemplate from '@templates/kitchen-template';
 import {useState, useLayoutEffect, useMemo} from 'react';
 import useSize from '@hzdg/use-size';
 import {WebsiteWrapper} from '@code/nav/website-wrapper';
@@ -10,7 +10,7 @@ import NavLogo from '@components/NavLogo';
 const NavPage = (): JSX.Element => {
   const frontmatter = {
     title: 'A Nav that just works',
-    subtitle: 'Recipe',
+    subtitle: 'Kitchen',
     description: `A nav that isn't based on media queries`,
     author: 'Preston Straight',
     authorGithub: 'https://github.com/presto2116',
@@ -19,7 +19,7 @@ const NavPage = (): JSX.Element => {
     hzCoreComponent: '@hzdg/use-size',
     hzCoreLink: 'https://hz-core.netlify.app/use-size',
     keywords: ['@hzdg/use-size', 'Nav', 'flexbox'],
-    blogPostUrl: '/blog/nav/',
+    recipePostUrl: '/recipes/nav/',
   };
 
   const scope = {
@@ -147,7 +147,7 @@ const NavPage = (): JSX.Element => {
   )`;
 
   return (
-    <RecipeTemplate
+    <KitchenTemplate
       codeSnippet={Snippet}
       scope={scope}
       frontmatter={frontmatter}

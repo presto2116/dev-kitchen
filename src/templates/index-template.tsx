@@ -13,7 +13,7 @@ import PageHeading from '@components/PageHeading';
 
 // TODO: Update if fields don't need to be required
 // TODO: Find me a home
-interface BlogIndexProps {
+interface RecipeIndexProps {
   pageContext: {
     frontmatter: {
       title: string;
@@ -34,7 +34,7 @@ interface BlogIndexProps {
   };
 }
 
-const BlogIndexTemplate = ({pageContext}: BlogIndexProps): JSX.Element => {
+const RecipeIndexTemplate = ({pageContext}: RecipeIndexProps): JSX.Element => {
   const {pathname} = useLocation();
   const {frontmatter, body} = pageContext;
   const mdxComponents = MdxFactory({isText: true, activeTab: true});
@@ -71,4 +71,4 @@ const BlogIndexTemplate = ({pageContext}: BlogIndexProps): JSX.Element => {
   );
 };
 
-export default BlogIndexTemplate;
+export default RecipeIndexTemplate;

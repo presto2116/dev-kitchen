@@ -24,9 +24,9 @@ const PageHeading = ({frontmatter}): JSX.Element => {
           'MMMM do, yyyy',
         )}`}</Text>
       )}
-      {frontmatter.blogPostUrl && (
-        <GatsbyLink to={frontmatter.blogPostUrl}>
-          Check out the blog post
+      {frontmatter.recipePostUrl && (
+        <GatsbyLink to={frontmatter.recipePostUrl}>
+          Check out the recipe
         </GatsbyLink>
       )}
     </Box>

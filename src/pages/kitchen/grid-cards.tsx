@@ -2,21 +2,21 @@
 import {jsx, Flex, Heading, Text, Grid} from 'theme-ui';
 import useSize from '@hzdg/use-size';
 
-import RecipeTemplate from '@templates/recipe-template';
+import KitchenTemplate from '@templates/kitchen-template';
 
-const MessingWithWidthsRecipe = (): JSX.Element => {
+const MessingWithWidthsKitchen = (): JSX.Element => {
   const frontmatter = {
     title: 'Grid Cards',
-    subtitle: 'Recipe',
+    subtitle: 'Kitchen',
     description: 'TODO: description',
     author: 'Preston Straight',
     authorGithub: 'https://github.com/presto2116',
     written: '2020-08-01',
-    template: 'recipe-template',
+    template: 'kitchen-template',
     hzCoreComponent: '@hzdg/use-size',
     hzCoreLink: 'https://hz-core.netlify.app/use-size',
     keywords: ['@hzdg/use-size', 'css-grid'],
-    blogPostUrl: '/blog/grid-cards/',
+    recipePostUrl: '/recipes/grid-cards/',
   };
 
   const scope = {
@@ -97,7 +97,7 @@ const MessingWithWidthsRecipe = (): JSX.Element => {
     )`;
 
   return (
-    <RecipeTemplate
+    <KitchenTemplate
       codeSnippet={Snippet}
       scope={scope}
       frontmatter={frontmatter}
@@ -105,4 +105,4 @@ const MessingWithWidthsRecipe = (): JSX.Element => {
   );
 };
 
-export default MessingWithWidthsRecipe;
+export default MessingWithWidthsKitchen;

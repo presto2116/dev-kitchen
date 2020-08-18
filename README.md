@@ -1,21 +1,21 @@
-# HZ Dev Blog
+# HZ Dev Kitchen
 
 Welcome to a place to share code and show off some things you have created.
 
 There are two types of posts you can make here
 
-* A blog post
 * A recipe
+* An interactive kitchen
 
-For blog posts I have set up a way to render an example in as many steps as needed to explain your thought process. I am treating them as training exercises that can be be documented and help granularly explain an idea that you have been working on.
+For recipe posts I have set up a way to render an example in as many steps as needed to explain your thought process. I am treating them as training exercises that can be be documented and help granularly explain an idea that you have been working on.
 
 It has been arranged to build your code into steps that you can expand on from 1 - n. 
 
 To start open a new directory in src/code. ie. src/code/new-example. step-1.tsx should be the start of your code. I have gone the route of copying and adding additional code until finished. start small at step-1.tsx and expand from there. or write the entire example and work backwards to step-1.
 
-In parallel, in src/blog you should create the same directory from /code. ie. src/blog/new-example. in this directory you will be creating mdx files. index.mdx will be your intro or preface to the post and step-1.mdx - step-n.mdx will help document the code from /code. 
+In parallel, in src/recipes you should create the same directory from /code. ie. src/recipes/new-example. in this directory you will be creating mdx files. index.mdx will be your intro or preface to the post and step-1.mdx - step-n.mdx will help document the code from /code. 
 
-If you open up a blog post in a browser you will see three tabs. Copy, Code, and Result. 
+If you open up a recipe post in a browser you will see three tabs. Copy, Code, and Result. 
 * Copy = mdx file documentation. 
 * Code = a generated code snippet and diff from previous step. 
 * Result = the rendered result of said code.
@@ -26,10 +26,10 @@ You will be writing mdx like you normally do. There is a provided frontmatter ty
 
 ## Frontmatter breakdown
 
-* title: Title of blog post
-* subtitle: Subtitle of blog post
-* description: Description of blog post
-* author: Author of blog post
+* title: Title of recipe post
+* subtitle: Subtitle of recipe post
+* description: Description of recipe post
+* author: Author of recipe post
 * authorGithub: author's github if you want to link your github account
 * written: string date written. ie. '2020-07-19'
 * template: template of post. one of step-template, index-template
@@ -65,6 +65,6 @@ A gatsby link to another url.
 
 and 
 
-/src/blog/use-size 
+/src/recipes/use-size 
 
-are probably the most basic examples on how to write these step by step. Note there is no need to write the Code in any special way. just write it, and import into blog step post and render it in `<RenderCode Code={here}>` 
+are probably the most basic examples on how to write these step by step. Note there is no need to write the Code in any special way. just write it, and import into recipe step post and render it in `<RenderCode Code={here}>` 

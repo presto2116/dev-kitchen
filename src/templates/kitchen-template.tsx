@@ -10,7 +10,7 @@ import Layout from '@components/Layout';
 import Meta from '@components/Meta';
 import PageHeading from '@components/PageHeading';
 
-interface RecipeTemplateProps {
+interface KitchenTemplateProps {
   codeSnippet: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   scope: any;
@@ -18,11 +18,11 @@ interface RecipeTemplateProps {
   frontmatter?: any;
 }
 
-const RecipeTemplate = ({
+const KitchenTemplate = ({
   codeSnippet,
   scope,
   frontmatter,
-}: RecipeTemplateProps): JSX.Element => {
+}: KitchenTemplateProps): JSX.Element => {
   const {pathname} = useLocation();
 
   const [activeTab, setActiveTab] = useState<string>('Editor');
@@ -70,4 +70,4 @@ const RecipeTemplate = ({
   );
 };
 
-export default RecipeTemplate;
+export default KitchenTemplate;

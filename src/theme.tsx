@@ -150,10 +150,9 @@ export const base = {
       '&.active, &.active:hover': {bg: 'boulder'},
       '&:hover': {bg: 'boulder'},
     },
-    recipe: {
+    base: {
       color: 'blue',
       fontSize: 3,
-      textTransform: 'capitalize',
     },
     back: {
       display: 'inline-flex',

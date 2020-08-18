@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'HZ Dev Blog',
+    title: 'HZ Dev Kitchen',
     description: `HZ's blog about all things dev`,
     author: 'Preston Straight',
     siteUrl: 'https://github.com/presto2116',
@@ -37,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/blog/`,
+        name: `recipes`,
+        path: `${__dirname}/src/recipes/`,
       },
     },
     'gatsby-transformer-javascript-frontmatter',

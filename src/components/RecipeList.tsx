@@ -20,12 +20,12 @@ const ALL_INDEX_MDX = graphql`
   }
 `;
 
-interface BlogListProps {
+interface RecipeListProps {
   sx?: SxStyleProp;
   className?: string;
 }
 
-const BlogList = ({sx, className}: BlogListProps): JSX.Element => {
+const RecipeList = ({sx, className}: RecipeListProps): JSX.Element => {
   const {allMdx} = useStaticQuery(ALL_INDEX_MDX);
 
   const links = allMdx.edges
@@ -40,7 +40,7 @@ const BlogList = ({sx, className}: BlogListProps): JSX.Element => {
         'MMMM do, yyyy',
       )}`;
       return {
-        url: `/blog/${i.node.slug}`,
+        url: `/recipes/${i.node.slug}`,
         label: label,
       };
     });
@@ -48,7 +48,7 @@ const BlogList = ({sx, className}: BlogListProps): JSX.Element => {
     <ul sx={{...sx, variant: 'styles.ul'}} className={className}>
       {links.map((link) => (
         <li key={link.label}>
-          <Link to={link.url} sx={{variant: 'links.recipe'}}>
+          <Link to={link.url} sx={{variant: 'links.base'}}>
             {link.label}
           </Link>
         </li>
@@ -57,4 +57,4 @@ const BlogList = ({sx, className}: BlogListProps): JSX.Element => {
   );
 };
 
-export default BlogList;
+export default RecipeList;

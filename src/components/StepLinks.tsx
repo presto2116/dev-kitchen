@@ -8,7 +8,7 @@ import useSize from '@hzdg/use-size';
 
 const ALL_PATHS_QUERY = graphql`
   query MyQuery {
-    allSitePage(filter: {path: {ne: "/blog/"}}) {
+    allSitePage(filter: {path: {ne: "/recipes/"}}) {
       edges {
         node {
           path
@@ -36,9 +36,9 @@ const StepLinks = ({sx, className}: StepLinksProps): JSX.Element => {
   const {allSitePage} = useStaticQuery(ALL_PATHS_QUERY);
   const {pathname} = useLocation();
   const pathAry = pathname.split('/');
-  const blogPost = pathAry[pathAry.findIndex((i) => i === 'blog') + 1];
+  const recipePost = pathAry[pathAry.findIndex((i) => i === 'recipes') + 1];
   const linkList = allSitePage.edges.filter(
-    (i) => i.node.path.includes(blogPost) && i.node.path.includes('step'),
+    (i) => i.node.path.includes(recipePost) && i.node.path.includes('step'),
   );
   const links: LinkProps[] = linkList
     // TODO: type safety
