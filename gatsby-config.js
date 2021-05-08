@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'HZ Dev Kitchen',
-    description: `HZ's blog about all things dev`,
+    title: 'Dev Kitchen',
+    description: `Preston's blog about all things dev`,
     author: 'Preston Straight',
     siteUrl: 'https://github.com/presto2116',
   },

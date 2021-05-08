@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import {jsx, Link} from 'theme-ui';
-import {HzLogo} from '@components/Icons';
+import {Logo} from '@components/Icons';
 
 const NavLogo = (): JSX.Element => (
   <Link variant={'logo'} href={'#logo'}>
-    <HzLogo />
+    <Logo />
   </Link>
 );
 

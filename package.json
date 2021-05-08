@@ -1,12 +1,12 @@
 {
-  "name": "hz-dev-kitchen",
+  "name": "dev-kitchen",
   "version": "0.0.0",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hzdg/hz-dev-kitchen.git"
+    "url": "git+https://github.com/presto2116/dev-kitchen.git"
   },
-  "author": "HZDG",
+  "author": "Preston Straight",
   "license": "UNLICENSED",
   "scripts": {
     "develop": "gatsby develop --host 0.0.0.0 --port 5000",

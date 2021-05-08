@@ -130,8 +130,8 @@ export const base = {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      '&.active, &.active:hover': {svg: {transform: 'scale(1.1)'}},
-      '&:hover': {svg: {transform: 'scale(1.1)'}},
+      '&.active, &.active:hover': {svg: {transform: 'scale(1.05)'}},
+      '&:hover': {svg: {transform: 'scale(1.05)'}},
       svg: {
         transition: 'transform 0.2s ease-in-out',
         height: 70,
